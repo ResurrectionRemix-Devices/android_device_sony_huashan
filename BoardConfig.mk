@@ -206,3 +206,28 @@ BOARD_SEPOLICY_UNION += \
 
 # inherit from the proprietary version
 -include vendor/sony/huashan/BoardConfigVendor.mk
+
+# RR Optimizations
+TARGET_TC_ROM := 4.9-uber
+
+TARGET_TC_KERNEL := 4.9
+
+RROPTI := true
+
+RR_O3 := true
+
+RR_STRICT := true
+
+RR_GRAPHITE := true
+
+RR_KRAIT := true
+
+RR_PIPE := true
+
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+
+RR_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
+
+WITH_LZMA_OTA := true
+
+LOCALVERSION := randomness
