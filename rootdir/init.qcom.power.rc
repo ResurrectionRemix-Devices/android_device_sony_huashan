@@ -41,6 +41,8 @@ on enable-low-power
 on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/interactive/boost 0
     start mpdecision
+    setprop sys.io.scheduler bfq
+    write /sys/block/mmcblk1/queue/scheduler bfq
 
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates
