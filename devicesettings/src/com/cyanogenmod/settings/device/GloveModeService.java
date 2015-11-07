@@ -22,8 +22,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
-import android.provider.Settings;
 import android.util.Log;
+
+import cyanogenmod.providers.CMSettings;
+
 import java.lang.System;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -106,9 +108,7 @@ public class GloveModeService extends Service {
     };
 
     private boolean isGloveModeEnabled() {
-        return (android.provider.Settings.System.getInt(
-                mContext.getContentResolver(),
-                Settings.System.CM_HARDWARE_HIGH_TOUCH_SENSITIVITY_ENABLE,
-                0) == 1);
+        return (CMSettings.System.getInt(mContext.getContentResolver(),
+                CMSettings.System.HIGH_TOUCH_SENSITIVITY_ENABLE, 0) == 1);
     }
 }
