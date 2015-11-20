@@ -231,3 +231,5 @@ RR_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
 WITH_LZMA_OTA := true
 
 LOCALVERSION := randomness
+
+-include vendor/cm/config/opti.mk
